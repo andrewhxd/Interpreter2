@@ -51,6 +51,15 @@ public class SpartieInterpreter {
         // TODO: Handle unique case with add operator that can be applied to Strings and Doubles
         if (expression.operator.type == TokenType.ADD) {
             // TODO: Return the correct evaluation
+            if (left instanceof String || right instanceof String) {
+                String leftStr = (left instanceof Double) ?
+                        String.format("%.2f", (double)left) :
+                        String.valueOf(left);
+                String rightStr = (right instanceof Double) ?
+                        String.format("%.2f", (double)right) :
+                        String.valueOf(right);
+                return leftStr + rightStr;
+            }
         }
 
         // TODO: Test if the two are equivalent or not equivalent

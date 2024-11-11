@@ -15,6 +15,17 @@ class SpartieInterpreterTest {
         assertEquals(-5.0, result);
     }
 
+    @Test
+    void testInterpretBinary() {
+        Token addToken = new Token(TokenType.ADD, "+", 1);
+        Expression.LiteralExpression literal1 = new Expression.LiteralExpression("Hello");
+        Expression.LiteralExpression literal2 = new Expression.LiteralExpression("World");
+        Expression.BinaryExpression expr = new Expression.BinaryExpression(literal1, addToken, literal2);
 
+        SpartieInterpreter spartieInterpreter = new SpartieInterpreter();
+        Object result = spartieInterpreter.run(expr);
+        //System.out.println(result);
+        assertEquals("HelloWorld", result);
+    }
 
 }
