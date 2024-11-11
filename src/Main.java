@@ -40,7 +40,7 @@ public class Main {
                 Object result = spartieInterpreter.run(expression);
 
                 // TODO: Replace with interpreting statements, right now just print out expression result
-                System.out.println(result);
+                System.out.println("Expression Result: " + result);
 
             } catch (IOException e) {
                 System.err.printf("Unable to read file %s\n", filename);
