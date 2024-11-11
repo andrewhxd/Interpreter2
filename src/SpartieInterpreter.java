@@ -32,10 +32,11 @@ public class SpartieInterpreter {
         // TODO: Before negating (-), check to make sure the type is correct using the provided validateOperand method
         switch (expression.operator.type) {
             case NOT:
-                return null;
+                return !isTrue(right);
             case SUBTRACT:
+                // Check correct type
                 validateOperand(expression.operator, right);
-                return null;
+                return -(double)right;
         }
 
         return null;
