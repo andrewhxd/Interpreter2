@@ -52,11 +52,11 @@ public class SpartieInterpreter {
         if (expression.operator.type == TokenType.ADD) {
             // TODO: Return the correct evaluation
             if (left instanceof String || right instanceof String) {
-                String leftStr = (left instanceof Double) ?
-                        String.format("%.2f", (double)left) :
+                String leftStr = (left instanceof Number) ?
+                        String.format("%.2f", ((Number)left).doubleValue()) :
                         String.valueOf(left);
-                String rightStr = (right instanceof Double) ?
-                        String.format("%.2f", (double)right) :
+                String rightStr = (right instanceof Number) ?
+                        String.format("%.2f", ((Number)right).doubleValue()) :
                         String.valueOf(right);
                 return leftStr + rightStr;
             }
