@@ -73,25 +73,28 @@ public class SpartieInterpreter {
         // At this point, we can validate if our operands are doubles because they cannot be Strings for the other
         // operation
         validateOperands(expression.operator, left, right);
-
+        double leftVal = (double)left;
+        double rightVal = (double)right;
         // TODO: Handle binary operator for operands. Keep in mind, at this point, we know they are doubles, but you
         // TODO: still need to cast them to doubles. Use the primitive type, e.g. (double)left
         // TODO: we do not support >, >=, <, or <= on Strings
         switch(expression.operator.type) {
+            case ADD:
+                return leftVal + rightVal;
             case SUBTRACT:
-                return null;
+                return leftVal - rightVal;
             case MULTIPLY:
-                return null;
+                return leftVal * rightVal;
             case DIVIDE:
-                return null;
+                return leftVal / rightVal;
             case GREATER_THAN:
-                return null;
+                return leftVal > rightVal;
             case GREATER_EQUAL:
-                return null;
+                return leftVal >= rightVal;
             case LESS_THAN:
-                return null;
+                return leftVal < rightVal;
             case LESS_EQUAL:
-                return null;
+                return leftVal <= rightVal;
         }
 
         return null;
