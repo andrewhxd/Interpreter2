@@ -94,6 +94,13 @@ public class SpartieInterpreter {
         // They are equal under the following conditions:
         // 1. They are both null
         // 2. Their values are the same
+        if (left == null && right == null) {
+            return true;
+        }
+
+        if (left.equals(right)) {
+            return true;
+        }
 
         return false;
     }
