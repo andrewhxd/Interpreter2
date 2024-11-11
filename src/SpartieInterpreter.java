@@ -102,7 +102,13 @@ public class SpartieInterpreter {
     private boolean isTrue(Object object) {
         // We should return false if an object is null
         // If an object is of type boolean, we should return the primitive equivalent of that value
+        if (object == null) {
+            return false;
+        }
 
+        if (object instanceof Boolean) {
+            return (Boolean) object;
+        }
         return true;
     }
 
