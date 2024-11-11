@@ -65,9 +65,9 @@ public class SpartieInterpreter {
         // TODO: Test if the two are equivalent or not equivalent
         switch(expression.operator.type) {
             case EQUIVALENT:
-                return null;
+                return isEquivalent(left, right);
             case NOT_EQUAL:
-                return null;
+                return !isEquivalent(left, right);
         }
 
         // At this point, we can validate if our operands are doubles because they cannot be Strings for the other
